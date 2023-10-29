@@ -1,0 +1,30 @@
+﻿@using RapidAPIExample.Models
+@model List<ExchangeViewModel.ExchangeRate>
+
+
+    <table class="mt-4 table table-hover">
+        @using (Html.BeginForm("Index", "Exchange", FormMethod.Post))
+{
+                <label>PARA TURUNU GIR</label>
+                <input type="text" class="form-control" name="tur"/>
+                <button>GETIR</button>
+}
+        <thead>
+
+            <tr>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.exchange_rate_buy</th>
+                    <th>@item.currency</th>
+                    <th>@item.base_currency</th>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
